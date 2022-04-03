@@ -5,18 +5,15 @@ class Solution {
             char c = s.charAt(i);
             switch(c){                                     // array required, but String found so we convert string to char
             
-                case 'I' : num = (i != s.length() - 1 && (s.charAt(i + 1) == 'V' || s.charAt(i + 1) == 'X')) ? num - 1
-					               : num + 1;
+                case 'I' : num = (i != s.length() - 1 && (s.charAt(i + 1) == 'V' || s.charAt(i + 1) == 'X')) ? num - 1 : num + 1;
                          break;
                 case 'V' : num += 5;
                          break;
-                case 'X' : num = (i != s.length() - 1 && (s.charAt(i + 1) == 'L' || s.charAt(i + 1) == 'C')) ? num - 10
-					               : num + 10;
+                case 'X' : num = (i != s.length() - 1 && (s.charAt(i + 1) == 'L' || s.charAt(i + 1) == 'C')) ? num - 10 : num + 10;
                          break;
                 case 'L' : num += 50;
                          break;
-                case 'C' : num = (i != s.length() - 1 && (s.charAt(i + 1) == 'D' || s.charAt(i + 1) == 'M')) ? num - 100
-					               : num + 100;
+                case 'C' : num = (i != s.length() - 1 && (s.charAt(i + 1) == 'D' || s.charAt(i + 1) == 'M')) ? num - 100 : num + 100;
                          break;
                 case 'D' : num += 500;
                          break;
