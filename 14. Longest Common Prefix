@@ -3,7 +3,7 @@ class Solution {
         String s = strs[0];                                    // frist string element
         for(int i=1 ; i<strs.length ; ++i){                    // start from 2nd element till end
             while(strs[i].indexOf(s) != 0){                    // compare from total length till 0
-                s = s.substring(0, s.length() - 1);            // method which find subString
+                s = s.substring(0, s.length() - 1);            // method which find subString, compare every element of str[0] to other string elements
                 if(s.isEmpty()){                               // if there is no same prefix
                     return "";
                 }
