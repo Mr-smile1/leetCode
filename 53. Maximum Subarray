@@ -1,0 +1,25 @@
+
+
+class Solution {
+    public int maxSubArray(int[] nums){
+        int maxsum = nums[0];        // first element is max at start
+        int cursum = maxsum;         // hence current max is also first element
+        
+        for(int i=1;i<nums.length;i++){
+            cursum = Math.max(nums[i], nums[i] + cursum);         // compare current element & current element + cursum
+            maxsum = Math.max(cursum, maxsum);                    // compare cursum & maxsum, which ever is bigger update
+        }
+        return maxsum;
+    }
+}
+
+
+// here traverse through array,
+// first element is biggest at start
+// as we iterate through the array check if current element is greater than sum of prev elements sums and current element
+// a = [5,4,-1,7,8]
+// num[0] = 5         , num[1] = 4         , num[2] = -1        , num[3] = 7          , num[4] = 8
+// cursum = 0         , cursum = 5         , cursum = 9         , cursum = 8          , cursum = 15
+// num[0] + cursum = 5, num[1] + cursum = 9, num[2] + cursum = 8, num[3] + cursum = 15, num[3] + cursum = 23
+// maxsum = 5         , maxsum = 9         , maxsum = 9         , maxsum = 15         , maxsum = 23
+// return maxsum
