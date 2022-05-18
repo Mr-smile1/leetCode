@@ -17,6 +17,7 @@ class Solution {
             }
             
             map.put(cursum, map.getOrDefault(cursum, 0) +1);
+            // if num is not present make a key value pair and increment it
         }
         return count;
     }
