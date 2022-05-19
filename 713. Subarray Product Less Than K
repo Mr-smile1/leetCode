@@ -37,4 +37,25 @@ space : O(1)
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
+class Solution {
+    public int numSubarrayProductLessThanK(int[] nums, int k) {
+        int p=1;
+        int l=0,r=0,count=0;
+        while(r<nums.length)
+        {
+            p*=nums[r];
+            if(p<k)
+                count+=r-l+1;
+            else
+            {
+                while(l<=r && l<nums.length && p>=k)
+                {
+                    p/=nums[l++];
+                }
+               count+=r-l+1;
+            }
+            r++;
+        }
+        return count;
+    }
+}
